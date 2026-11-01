@@ -46,8 +46,8 @@ compile step, and the read-only URI mode matches the access posture.
 
 ## Provenance
 
-Input schema verified read-only against a live Hermes store
-(a live gateway store at `~/.hermes/state.db`, **schema_version 30**, 8,602 sessions /
+Input schema verified read-only against a live Hermes gateway store
+(`~/.hermes/state.db`, **schema_version 30**, 8,602 sessions /
 157,870 messages) on **2026-11-01**. Real-corpus validation used a remote
 subset (all sessions with `source IN ('cli','discord')` and their messages +
 `session_model_usage` rows — 87 sessions, 1,810 messages) extracted with
