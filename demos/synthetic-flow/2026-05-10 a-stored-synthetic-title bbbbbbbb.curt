@@ -1,0 +1,41 @@
+{
+	"curt": "curtis-conversation",
+	"version": 1,
+	"conversation": {
+		"id": "20260511_101502_bbbbbbbb",
+		"title": "A stored synthetic title",
+		"createdAt": 1778447232909,
+		"updatedAt": 1778447343051,
+		"messages": [
+			{
+				"id": "20260511_101502_bbbbbbbb-1",
+				"role": "user",
+				"content": "Synthetic prompt for cli session B.",
+				"timestamp": 1778447233909
+			},
+			{
+				"id": "20260511_101502_bbbbbbbb-2",
+				"role": "assistant",
+				"content": "Reply with broken tool_calls payload.",
+				"timestamp": 1778447234909,
+				"tokens": {
+					"totalTokens": 20
+				}
+			}
+		],
+		"model": "synthetic-model-b",
+		"hermes": {
+			"source": "cli",
+			"endReason": "session_reset"
+		},
+		"hermesTokens": {
+			"inputTokens": 100,
+			"outputTokens": 200
+		},
+		"hermesCostUsd": 0.002
+	},
+	"generator": "curt-hermes@1.0.0",
+	"extensions": [
+		"usage-metadata"
+	]
+}

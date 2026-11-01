@@ -1,0 +1,109 @@
+{
+	"curt": "curtis-conversation",
+	"version": 1,
+	"conversation": {
+		"id": "20260510_215901_aaaaaaaa",
+		"title": "Synthetic first user prompt for fixture session A.",
+		"createdAt": 1778447132909,
+		"updatedAt": 1778447203051,
+		"messages": [
+			{
+				"id": "20260510_215901_aaaaaaaa-1",
+				"role": "user",
+				"content": "Synthetic first user prompt for fixture session A.",
+				"timestamp": 1778447133909
+			},
+			{
+				"id": "20260510_215901_aaaaaaaa-2",
+				"role": "assistant",
+				"content": "Running the synthetic tool now.",
+				"timestamp": 1778447134909,
+				"thinking": "Synthetic reasoning trace part one.\n\nSynthetic reasoning trace part two.",
+				"toolCalls": [
+					{
+						"id": "call_syn1",
+						"name": "read_file",
+						"arguments": {
+							"path": "synthetic.txt"
+						}
+					}
+				],
+				"tokens": {
+					"totalTokens": 210
+				},
+				"stopReason": "tool_calls"
+			},
+			{
+				"id": "20260510_215901_aaaaaaaa-3",
+				"role": "tool",
+				"content": "Tool output: synthetic-42",
+				"timestamp": 1778447135909,
+				"toolCallId": "call_syn1",
+				"toolName": "read_file"
+			},
+			{
+				"id": "20260510_215901_aaaaaaaa-4",
+				"role": "user",
+				"content": "Synthetic follow-up question.",
+				"timestamp": 1778447136909
+			},
+			{
+				"id": "20260510_215901_aaaaaaaa-5",
+				"role": "assistant",
+				"content": "{\"text\":\"Structured synthetic reply.\",\"done\":true}",
+				"timestamp": 1778447137909,
+				"tokens": {
+					"totalTokens": 55
+				}
+			},
+			{
+				"id": "20260510_215901_aaaaaaaa-6",
+				"role": "tool",
+				"content": "{\"output\":\"synthetic structured tool output\",\"exit_code\":0}",
+				"timestamp": 1778447138909,
+				"toolCallId": "call_missing",
+				"toolName": "orphan_tool"
+			}
+		],
+		"model": "synthetic-model-a",
+		"hermes": {
+			"source": "discord",
+			"chatType": "dm",
+			"endReason": "agent_close"
+		},
+		"hermesTokens": {
+			"inputTokens": 1200,
+			"outputTokens": 3400,
+			"cacheReadTokens": 100,
+			"cacheWriteTokens": 200,
+			"reasoningTokens": 500
+		},
+		"hermesCostUsd": 0.0123,
+		"hermesModelUsage": [
+			{
+				"model": "synthetic-model-a",
+				"apiCallCount": 6,
+				"inputTokens": 1000,
+				"outputTokens": 3000,
+				"cacheReadTokens": 90,
+				"cacheWriteTokens": 180,
+				"reasoningTokens": 450,
+				"estimatedCostUsd": 0.01
+			},
+			{
+				"model": "synthetic-model-small",
+				"apiCallCount": 2,
+				"inputTokens": 200,
+				"outputTokens": 400,
+				"cacheReadTokens": 10,
+				"cacheWriteTokens": 20,
+				"reasoningTokens": 50,
+				"estimatedCostUsd": 0.0023
+			}
+		]
+	},
+	"generator": "curt-hermes@1.0.0",
+	"extensions": [
+		"usage-metadata"
+	]
+}

@@ -1,0 +1,38 @@
+{
+	"name": "curt-hermes",
+	"version": "1.0.0",
+	"description": "Convert Hermes agent state.db (SQLite) to .curt conversation files, and .curt files to Claude Code session JSONL for Hermes import",
+	"license": "MIT",
+	"type": "module",
+	"engines": {
+		"node": ">=22.5"
+	},
+	"bin": {
+		"curt-hermes": "dist/cli.js"
+	},
+	"main": "dist/hermes.js",
+	"types": "dist/hermes.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsc",
+		"test": "vitest run",
+		"prepack": "npm run build"
+	},
+	"dependencies": {
+		"curt-format": "^1.2.0"
+	},
+	"devDependencies": {
+		"@types/node": "^24.19.2",
+		"typescript": "^5.9.3",
+		"vitest": "^3.2.7"
+	},
+	"keywords": [
+		"curt",
+		"hermes",
+		"converter",
+		"claude-code",
+		"transcript"
+	]
+}

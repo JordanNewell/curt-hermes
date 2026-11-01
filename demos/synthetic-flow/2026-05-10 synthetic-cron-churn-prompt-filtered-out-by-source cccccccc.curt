@@ -1,0 +1,27 @@
+{
+	"curt": "curtis-conversation",
+	"version": 1,
+	"conversation": {
+		"id": "20260512_120000_cccccccc",
+		"title": "Synthetic cron churn prompt — filtered out by --source.",
+		"createdAt": 1778447432909,
+		"updatedAt": 1778447452909,
+		"messages": [
+			{
+				"id": "20260512_120000_cccccccc-1",
+				"role": "user",
+				"content": "Synthetic cron churn prompt — filtered out by --source.",
+				"timestamp": 1778447433909
+			}
+		],
+		"model": "synthetic-model-c",
+		"hermes": {
+			"source": "cron",
+			"endReason": "cron_complete"
+		}
+	},
+	"generator": "curt-hermes@1.0.0",
+	"extensions": [
+		"usage-metadata"
+	]
+}
