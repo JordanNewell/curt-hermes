@@ -499,7 +499,13 @@ export function resolveCurtWritePath(
 	const stem = filePath.slice(0, -".curt".length);
 	let n = 2;
 	let target = `${stem}-2.curt`;
-	while (existsSync(target)) target = `${stem}-${++n}.curt`;
+	while (existsSync(target)) {
+		// An existing -N variant with identical content is the same export, not a
+		// collision — otherwise re-runs after a base-file mismatch would keep
+		// spawning fresh duplicates forever.
+		if (readFileSync(target, "utf8") === body) return { path: target, collided: false };
+		target = `${stem}-${++n}.curt`;
+	}
 	return { path: target, collided: true };
 }
 

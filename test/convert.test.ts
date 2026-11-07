@@ -276,6 +276,22 @@ describe("resolveCurtWritePath", () => {
 		expect(result.path).toBe(`${file.slice(0, -".curt".length)}-2.curt`);
 		expect(readFileSync(file, "utf8")).toBe("original");
 	});
+	it("returns a matching -N variant instead of creating further duplicates", () => {
+		const base = file.slice(0, -".curt".length);
+		writeFileSync(file, "old body"); // stale base file
+		writeFileSync(`${base}-2.curt`, "new body");
+		const result = resolveCurtWritePath(file, "new body");
+		expect(result.collided).toBe(false);
+		expect(result.path).toBe(`${base}-2.curt`);
+	});
+	it("still suffixes fresh when no existing variant matches", () => {
+		const base = file.slice(0, -".curt".length);
+		writeFileSync(file, "old body");
+		writeFileSync(`${base}-2.curt`, "other body");
+		const result = resolveCurtWritePath(file, "new body");
+		expect(result.collided).toBe(true);
+		expect(result.path).toBe(`${base}-3.curt`);
+	});
 
 	afterAll(() => rmSync(tmp2, { recursive: true, force: true }));
 });
