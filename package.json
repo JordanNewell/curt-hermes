@@ -1,6 +1,6 @@
 {
 	"name": "curt-hermes",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Convert Hermes agent state.db (SQLite) to .curt conversation files, and .curt files to Claude Code session JSONL for Hermes import",
 	"license": "MIT",
 	"type": "module",
