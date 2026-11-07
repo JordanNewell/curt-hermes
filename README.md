@@ -34,7 +34,9 @@ read, never written). Every `.curt` output is re-parsed with `parseCurt`
 before it is written; a file that fails round-trip validation is never
 written. Output names follow the Curtis bulk convention
 (`YYYY-MM-DD <slug> <suffix>.curt` via `curtFilename()`); a filename
-collision gets a `-2`/`-3` suffix instead of silently overwriting. Direction 2
+collision gets a `-2`/`-3` suffix instead of silently overwriting; identical
+content (including existing `-N` variants) is reused, so re-runs are
+idempotent. Direction 2
 validates each emitted JSONL for line-parseability and `uuid`/`parentUuid`
 chain integrity before writing. A summary line with converted/skipped/
 round-trip-failure counts goes to stderr; per-session problems are counted,
